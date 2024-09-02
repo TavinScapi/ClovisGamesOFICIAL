@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CLOVIS GAMES - Menu</title>
+    <meta name="description"
+        content="Desfrute dos melhores jogos gratuitos com a Clovis Games. Jogos de alta qualidade, 100% gratuitos e seguros!">
+    <meta name="keywords" content="jogos, gratuitos, Clovis Games, alta qualidade, segurança, mods, lançamento">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js" defer></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" type="image/png" href="/IMAGENS/logo100-removebg-preview.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="/IMAGENS/logonome.png" alt="Clovis Games Logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <button class="dropbtn">JOGOS<i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li><a href="/CATALOGO/catalogo_jogos.html"><i class="fas fa-th"></i> Todos os Jogos</a></li>
+                        <li><a href="/EMBREVE/em_breve.html"><i class="fas fa-desktop"></i> PC</a></li>
+                        <li><a href="/CATEGORIA/categoria.html"><i class="fab fa-playstation"></i> PLAYSTATION</a></li>
+                        <li><a href="/CATEGORIA/categoria.html"><i class="fab fa-xbox"></i> XBOX</a></li>
+                        <li><a href="/CATEGORIA/categoria.html"><i class="fas fa-mobile-alt"></i> MOBILE</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button class="dropbtn">SOBRE<i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li><a href="/Clovis Games/CG.html"><i class="fas fa-info-circle"></i> Clovis Games</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=NhHb9usKy6Q"><i class="fab fa-youtube"></i> Francis</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button class="dropbtn">COMO BAIXAR <i class="fas fa-chevron-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li><a href="/COMOBAIXAR/COMOBAIXAR.html"><i class="fas fa-download"></i> Tutorial</a></li>
+                        <li><a href="/COMOBAIXAR/COMOBAIXAR copy.html"><i class="fas fa-universal-access"></i> Tutorial acessível</a></li>
+                        <li><a href="/COMOBAIXAR/mods.html"><i class="fas fa-puzzle-piece"></i> Como baixar Mods</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#" class="profile-icon" aria-label="Profile">
+                <i class="bx bx-user"></i>
+            </a>
+            <a href="#" class="cart-icon" aria-label="Cart">
+                <i class="bx bx-cart"></i>
+            </a>
+        </div>
+
+        <button class="mobile-menu-toggle"><i class="bx bx-menu"></i></button>
+
+        <script>
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenuToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+
+            const dropdownLinks = document.querySelectorAll('.dropdown-content li');
+
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.classList.remove('active');
+                });
+            });
+        </script>
+    </header>
+    <main>
+        <div class="carousel">
+            <button class="carousel-button left">&#8249;</button>
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="/IMAGENS/Smart watches.png" alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/IMAGENS/recemadd.png" alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/IMAGENS/embreve.png" alt="Imagem 3">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button right">&#8250;</button>
+        </div>
+        <section class="services">
+            <div class="service-card">
+                <img src="/IMAGENS/pirata1.jpg" alt="Jogos de alta qualidade">
+                <h3><i class='bx bx-trophy'></i> Jogos de Alta Qualidade</h3>
+                <p>Desfrute dos melhores jogos gratuitos com gráficos tão nítidos quanto o olho de um falcão marinho e
+                    jogabilidade mais suave que a brisa dos sete mares!</p>
+            </div>
+            <div class="service-card">
+                <img src="/IMAGENS/pirata2.jpg" alt="Jogos sem custos">
+                <h3><i class='bx bx-gift'></i> Jogos 100% Gratuitos</h3>
+                <p>Todos os nossos jogos são tão gratuitos quanto um tesouro enterrado por um pirata, sem truques, arrr!
+                </p>
+            </div>
+            <div class="service-card">
+                <img src="/IMAGENS/pirata3.jpg" alt="Segurança">
+                <h3><i class='bx bx-shield'></i> 100% Seguro</h3>
+                <p>Nosso navio está protegido contra todos os perigos do mar digital! Aqui, os seus dados são mais
+                    seguros do que um tesouro trancado no fundo do baú do Capitão Barba Negra!</p>
+            </div>
+        </section>
+        <section class="site-info">
+            <div class="container">
+                <div class="additional-info">
+                    <div class="image-container">
+                        <img src="/IMAGENS/COD-UNREDACTED-004.jpg" alt="Jogue no Dia Um">
+                    </div>
+                    <div class="text-container">
+                        <h3>Jogos Day One</h3>
+                        <p>Jogue títulos inéditos no dia do lançamento com o Acesso Antecipado, quando disponível. Tenha
+                            acesso ao nosso crescente catálogo com mais de 100 jogos!</p>
+                        <a href="/CATALOGO/catalogo_jogos.html"><button>VER TODOS OS JOGOS</button></a>
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <div class="text-container">
+                        <h3>Edições e DLCs Premium</h3>
+                        <p>Descubra edições especiais e conteúdos adicionais para seus jogos favoritos. Aproveite
+                            ofertas exclusivas e acesso antecipado a novos lançamentos!</p>
+                        <a href="/CATALOGO/catalogo_jogos.html"><button>VER TODOS OS JOGOS</button></a>
+                    </div>
+                    <div class="image-container">
+                        <img src="/IMAGENS/ed.webp" alt="Edições e DLCs Premium">
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <div class="image-container">
+                        <img src="/IMAGENS/mods.webp" alt="Suporte a Mods">
+                    </div>
+                    <div class="text-container">
+                        <h3>Suporte a Mods</h3>
+                        <p>Explore modificações criadas pela comunidade e personalize sua experiência de jogo. Descubra
+                            novos recursos e funcionalidades através do suporte a mods!</p>
+                        <a href="/COMOBAIXAR/mods.html"><button>VER COMO BAIXAR</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <h2>Atualizações</h2>
+            <div class="blog-container">
+                <article class="blog-post">
+                    <h3>Mudamos o menu</h3>
+                    <p>Ajustamos o menu principal para melhor visualização</p>
+                    <a href="#">Leia mais</a>
+                </article>
+                <article class="blog-post">
+                    <h3>Novas abas</h3>
+                    <p>Adicionamos novas abas com mais conteudo</p>
+                    <a href="#">Leia mais</a>
+                </article>
+                <article class="blog-post">
+                    <h3>Em breve...</h3>
+                    <p>Mais 10 jogos estão por vir</p>
+                    <a href="#">Leia mais</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <!-- Seção de Informações Principais -->
+                <div class="footer-section">
+                    <h4>Clovis Games</h4>
+                    <p>"Quando o peso do custo faz da cultura um privilégio, o povo se volta para alternativas não
+                        convencionais em busca do que deveria ser para todos."</p>
+                    <img src="/IMAGENS/logo100-removebg-preview.png" alt="Clovis Games Logo" class="footer-logo">
+                </div>
+
+                <!-- Seção de Conexão -->
+                <div class="footer-section">
+                    <h4>Conecte-se Conosco</h4>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-gmail'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/TavinScapi/ClovisGamesOFICIAL.git"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+                <br>
+                <div class="footer-section important">
+                    <h4>Aviso Importante</h4>
+                    <p>Nós não crackeamos os jogos! Nós apenas direcionamos você ao conteúdo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Clovis Games. Todos os direitos reservados. Navegue com segurança, Marujo!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
