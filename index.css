@@ -1,0 +1,694 @@
+/* Estilo Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #11212d; /* Azul Escuro */
+    color: #ffffff; /* Branco */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo da Navegação */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-links a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #ffffff; /* Branco */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1c74d9; /* Azul Médio */
+}
+
+/* Estilo Dropdown */
+.dropbtn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: transparent;
+    color: #ffffff; /* Branco */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.dropbtn i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #11212d; /* Azul Escuro */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 100;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #ffffff; /* Branco */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #0f3f76; /* Azul Médio */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown:hover .dropbtn {
+    color: #1c74d9; /* Azul Médio */
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(-180deg);
+}
+
+/* Estilo dos Ícones no Cabeçalho */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-left: 20px;
+    color: #ffffff; /* Branco */
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #1c74d9; /* Azul Médio */
+}
+
+/* Estilo do Menu Mobile */
+.mobile-menu-toggle {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #ffffff; /* Branco */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #11212d; /* Azul Escuro */
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: relative;
+        background-color: #11212d; /* Azul Escuro */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-content a {
+        color: #ffffff; /* Branco */
+        padding: 10px;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .header-icons a {
+        margin-left: 10px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+
+
+/* ========================================
+   Estilo Global
+======================================== */
+
+/* Estilo do corpo */
+body {
+    background: #eee;
+    background-color: #ffffffb4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../IMAGENS/barcofundo.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+/* Seletor de seleção */
+::selection {
+    color: rgb(0, 0, 0);
+    background: #155a9e;
+}
+
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #11212d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #155a9e;
+}
+
+/* Estilo dos botões */
+button {
+    background-color: #1c74d9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #155a9e;
+    transition: 0.3s;
+}
+
+/* Animação Dropdown */
+@keyframes slideDown {
+    from {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   carousel
+======================================== */
+
+.carousel {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto; /* Ajuste a margem conforme necessário */
+    overflow: hidden;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor do carousel */
+    position: relative;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px; /* Bordas arredondadas para as imagens também */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.201);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 100%; /* Botões arredondados */
+    transition: background-color 0.3s ease; /* Transição suave para a cor do fundo */
+}
+
+.carousel-button.left {
+    left: 10px;
+}
+
+.carousel-button.right {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Mudança de cor ao passar o mouse */
+}
+
+.carousel-button:focus {
+    outline: none;
+}
+
+/* ========================================
+   Serviços
+======================================== */
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    width: 23%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.service-card h3 {
+    background-color: #253745;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+.service-card p {
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+    margin: 0;
+}
+
+/* ========================================
+   Informações do Site
+======================================== */
+
+.site-info {
+    background-color: #11212d;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.site-info h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.site-info .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.site-info .additional-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.site-info .image-container,
+.site-info .image-container1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.site-info .image-container img,
+.site-info .image-container1 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.site-info .image-container1 img {
+    max-width: 80%;
+}
+
+.site-info .text-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.site-info .text-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.site-info .text-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.site-info .text-container button {
+    background-color: #1c74d9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.site-info .text-container button:hover {
+    background-color: #155a9e;
+    transition: 0.3s;
+}
+
+/* ========================================
+   Seções: Notícias, Blog, Suporte, Sobre
+======================================== */
+
+.news, .blog, .support, .about {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.news h2, .blog h2, .support h2, .about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #083354;
+}
+
+.news-container, .blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.news-item, .blog-post {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+}
+
+.news-item h3, .blog-post h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news-item p, .blog-post p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.news-item a, .blog-post a {
+    color: #1c74d9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.support {
+    text-align: center;
+}
+
+.support p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.support button {
+    background-color: #1c74d9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.support button:hover {
+    background-color: #155a9e;
+    transition: 0.3s;
+}
+
+.about p {
+    font-size: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ========================================
+   Rodapé
+======================================== */
+
+footer {
+    background-color: #11212d;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-top: 10px;
+}
+
+.footer-top {
+    border-bottom: 1px solid #1c74d9;
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #1c74d9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #1c74d9;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #1c74d9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #1c74d9;
+}
+
+.footer-section.important p {
+    color: red; /* Cor vermelha para o texto da seção de aviso importante */
+}
+
+.footer-section.important h4 {
+    color: red; /* Cor vermelha para o texto da seção de aviso importante */
+}
+
+.social-links a {
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho inicial dos ícones */
+    color: #ffffff; /* Cor dos ícones */
+    transition: font-size 0.3s ease; /* Transição suave ao mudar o tamanho */
+    
+}
+
+.social-links a:hover {
+    color: #1c74d9; /* Cor dos ícones ao passar o mouse */
+}
+
+/* ========================================
+   Adaptação Mobile
+======================================== */
+
+/* Serviços Responsivo */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 70%;
+    }
+}
+
+/* Responsividade das Seções de Notícias, Blog, Suporte, Sobre */
+@media (max-width: 768px) {
+    .news-item, .blog-post {
+        width: 100%;
+    }
+
+    .support, .about {
+        text-align: center;
+    }
+}
+
+/* Rodapé Responsivo */
+@media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+        padding: 0;
+    }
+
+    .footer-bottom {
+        padding-top: 20px;
+    }
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .carousel-button {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-button {
+        padding: 6px;
+        font-size: 14px;
+    }
+}
