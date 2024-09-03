@@ -1,0 +1,636 @@
+/* ========================================
+   Cabeçalho
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #ffffffb4;
+}
+
+/* Imagem de fundo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/IMAGENS/barcofundo.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #11212d; /* Azul Escuro */
+    color: #ffffff; /* Branco */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo da Navegação */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-links a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #ffffff; /* Branco */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1c74d9; /* Azul Médio */
+}
+
+/* Estilo Dropdown */
+.dropbtn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: transparent;
+    color: #ffffff; /* Branco */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.dropbtn i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #11212d; /* Azul Escuro */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 100;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #ffffff; /* Branco */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #0f3f76; /* Azul Médio */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown:hover .dropbtn {
+    color: #1c74d9; /* Azul Médio */
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(-180deg);
+}
+
+/* Estilo dos Ícones no Cabeçalho */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-left: 20px;
+    color: #ffffff; /* Branco */
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #1c74d9; /* Azul Médio */
+}
+
+/* Estilo do Menu Mobile */
+.mobile-menu-toggle {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #ffffff; /* Branco */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #11212d; /* Azul Escuro */
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: relative;
+        background-color: #11212d; /* Azul Escuro */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-content a {
+        color: #ffffff; /* Branco */
+        padding: 10px;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .header-icons a {
+        margin-left: 10px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+/* ========================================
+   Estilos gerais
+======================================== */
+/* Estilo do Título */
+main h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    color: #11212d; /* Azul Médio */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra do texto */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.search-filter-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.search-filter-bar input[type="text"] {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.search-filter-bar input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#noResultsMessage {
+    display: none; /* Mantém a mensagem oculta até ser necessária */
+    color: #ff6666; /* Cor vermelha um pouco mais suave */
+    font-size: 20px; /* Aumentei um pouco mais o tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+    background: linear-gradient(45deg, #1c3b52, #11212d); /* Fundo com gradiente diagonal */
+    border-radius: 12px; /* Borda ainda mais arredondada */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra maior para dar mais profundidade */
+    margin-top: 20px; /* Espaço acima da mensagem */
+    animation: fadeIn 0.5s ease-in-out, shake 0.5s ease-in-out 1s; /* Animação de fade e shake */
+    border: 2px solid #ff4c4c; /* Borda vermelha ao redor para destacar */
+}
+
+.surprise-btn {
+    background-color: #1c74d9; /* Azul Médio */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.surprise-btn:hover {
+    background-color: #11212d; /* Azul Escuro */
+}
+
+/* Esconder o botão em dispositivos móveis */
+@media (max-width: 768px) {
+    .surprise-btn {
+        display: none;
+    }
+}
+
+.highlight {
+    border: 2px solid #1c74d9; /* Azul Médio */
+    box-shadow: 0px 0px 10px #1c74d9;
+}
+
+#resetButton {
+    background-color: #1c74d9; /* Azul Médio */
+    color: #ffffff; /* Branco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#resetButton:hover {
+    background-color: #155a9c; /* Tom mais escuro para hover */
+}
+
+
+/* Animação para o efeito de fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animação de shake para chamar atenção */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+/* Tamanho */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Fundo */
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+/* Cor Normal */
+::-webkit-scrollbar-thumb {
+    background: #11212d;
+}
+
+/* Cor com o mouse em Cima */
+::-webkit-scrollbar-thumb:hover {
+    background: #155a9e;
+}
+
+::selection {
+    color: rgb(0, 0, 0);
+    background: #155a9e;
+}
+
+/* ========================================
+   Dropdown de Categorias
+======================================== */
+.category-dropdown {
+    position: relative;
+}
+
+.category-dropdown .dropbtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.category-dropdown .dropbtn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do dropdown para categorias */
+.category-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #11212d;
+    min-width: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 10px;
+}
+
+/* Mostrar o dropdown ao passar o mouse ou ao clicar */
+.category-dropdown:hover .dropdown-content,
+.category-dropdown:focus-within .dropdown-content {
+    display: grid;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Links do dropdown */
+.category-dropdown .dropdown-content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #0D2A3E;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    gap: 10px;
+}
+
+.category-dropdown .dropdown-content a:hover {
+    background-color: #1E4567;
+}
+
+/* Layout para desktop: 4 colunas */
+@media (min-width: 768px) {
+    .category-dropdown .dropdown-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Layout para mobile: 1 coluna */
+@media (max-width: 767px) {
+    .category-dropdown .dropdown-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Grid de Jogos
+======================================== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    background-color: #11212d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+
+.game-card img {
+    width: 100%;
+    border-bottom: 2px solid #1c74d9;
+    border-radius: 10px 10px 0 0;
+}
+
+.game-card h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.game-card p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: #1c74d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #145a99;
+}
+
+.cart-icon {
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover .cart-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.game-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.game-card a:visited h3 {
+    color: #ffffff; /* Mantém a cor original, evitando o roxo de link visitado */
+}
+
+.game-card a:hover h3 {
+    color: #1c74d9; /* Cor ao passar o mouse, se desejar */
+}
+
+.platform-icons {
+    margin: 10px 0;
+}
+
+.platform-icons i {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.platform-icons i:hover {
+    color: #1c74d9;
+}
+
+
+
+/* ========================================
+   Rodapé
+======================================== */
+
+footer {
+    background-color: #11212d;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-top: 10px;
+}
+
+.footer-top {
+    border-bottom: 1px solid #1c74d9;
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #1c74d9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #1c74d9;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #1c74d9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #1c74d9;
+}
+
+.footer-section.important p {
+    color: red; /* Cor vermelha para o texto da seção de aviso importante */
+}
+
+.footer-section.important h4 {
+    color: red; /* Cor vermelha para o texto da seção de aviso importante */
+}
+
+.social-links a {
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho inicial dos ícones */
+    color: #ffffff; /* Cor dos ícones */
+    transition: font-size 0.3s ease; /* Transição suave ao mudar o tamanho */
+    
+}
+
+.social-links a:hover {
+    color: #1c74d9; /* Cor dos ícones ao passar o mouse */
+}
