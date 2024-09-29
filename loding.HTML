@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Carregamento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            background-color: #11212D; /* Cor de fundo */
+            display: flex;
+            flex-direction: column; /* Alinha os itens verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            font-family: "Pirata One", sans-serif;
+        }
+
+        svg {
+            width: 100vw; /* Largura total da janela */
+            height: 20vh; /* Altura ajustada para o SVG */
+        }
+
+        svg text {
+            animation: stroke 5s infinite alternate;
+            stroke-width: 2;
+            stroke: #DCB86F;
+            font-size: 8vw; /* Tamanho responsivo do texto */
+            text-anchor: middle; /* Centraliza o texto */
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3; /* Cor clara para o fundo */
+            border-top: 8px solid #DCB86F; /* Cor da animação */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite; /* Animação de rotação */
+            margin-top: 20px; /* Espaço entre o texto e o loader */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes stroke {
+            0% {
+                fill: rgba(220, 184, 111, 0);
+                stroke: rgba(220, 184, 111, 1);
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 2;
+            }
+            70% {
+                fill: rgba(220, 184, 111, 0);
+                stroke: rgba(220, 184, 111, 1);
+            }
+            80% {
+                fill: rgba(220, 184, 111, 0);
+                stroke: rgba(220, 184, 111, 1);
+                stroke-width: 3;
+            }
+            100% {
+                fill: rgba(220, 184, 111, 1);
+                stroke: rgba(220, 184, 111, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
+
+        .message {
+            color: #DCB86F; /* Cor da mensagem */
+            font-size: 1.5em; /* Tamanho da fonte */
+            margin-top: 10px; /* Espaço acima da mensagem */
+        }
+
+        .wheel {
+            font-size: 50px; /* Tamanho do ícone */
+            color: #DCB86F; /* Cor do ícone */
+            animation: spin 2s linear infinite; /* Animação de rotação */
+            margin-top: 20px; /* Espaço entre o texto e o timão */
+        }
+    </style>
+    <script>
+        // Redirecionar após 5 segundos
+        setTimeout(function () {
+            window.location.href = "/MENU/menu.html"; // Altere para a página desejada
+        }, 5500);
+    </script>
+</head>
+
+<body>
+    <svg>
+        <text x="50%" y="50%" dy=".35em">
+            CLOVIS GAMES
+        </text>
+    </svg>
+
+    <!-- Ícone do timão de navio -->
+    <i class="fas fa-dharmachakra wheel"></i>
+
+    <div class="message">Aguarde ...</div> <!-- Mensagem adicional -->
+</body>
+
+</html>
