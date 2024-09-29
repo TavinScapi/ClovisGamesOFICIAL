@@ -1,85 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CLOVIS GAMES - Catálogo de Jogos</title>
-    <meta name="description"
-        content="Desfrute dos melhores jogos gratuitos com a Clovis Games. Jogos de alta qualidade, 100% gratuitos e seguros!">
-    <meta name="keywords" content="jogos, gratuitos, Clovis Games, alta qualidade, segurança, mods, lançamento">
-    <link rel="stylesheet" type="text/css" href="../CATALOGO/index.css">
-    <script src="../CATALOGO/index.js" defer></script>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="icon" type="image/png" href="../IMAGENS/logo100-removebg-preview.png" sizes="32x32">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Catálogo de Jogos - CLOVIS GAMES</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="index.js" defer></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel="icon" type="image/png" href="../IMAGENS/LOGO_CLOVISGAMES.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="../index.html"><img src="../IMAGENS/logonome.png" alt="Clovis Games Logo"></a>
-        </div>
-        <nav>
+
+    <nav>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="../MENU/index.html"><img src="../IMAGENS/LOGO_CLOVISGAMES.png" alt="Clovis Games Logo"></a>
+            </div>
+            <input type="radio" name="slider" id="menu-btn">
+            <input type="radio" name="slider" id="close-btn">
             <ul class="nav-links">
-                <li class="dropdown">
-                    <button class="dropbtn">JOGOS<i class="fas fa-chevron-down"></i></button>
-                    <ul class="dropdown-content">
-                        <li><a href="CATALOGO/index.html"><i class="fas fa-th"></i> Todos os Jogos</a></li>
-                        <li><a href="/EMBREVE/em_breve.html"><i class="fas fa-desktop"></i> PC</a></li>
-                        <li><a href="/CATEGORIA/categoria.html"><i class="fab fa-playstation"></i> PLAYSTATION</a></li>
-                        <li><a href="/CATEGORIA/categoria.html"><i class="fab fa-xbox"></i> XBOX</a></li>
-                        <li><a href="/CATEGORIA/categoria.html"><i class="fas fa-mobile-alt"></i> MOBILE</a></li>
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                <li><a href="../MENU/index.html">INICIO</a></li>
+                <li>
+                    <a href="#" class="desktop-item">JOGOS</a>
+                    <input type="checkbox" id="showDrop">
+                    <label for="showDrop" class="mobile-item">JOGOS</label>
+                    <ul class="drop-menu">
+                        <li><a href="../CATALOGO/index.html">TODOS</a></li>
+                        <li><a href="#">PC</a></li>
+                        <li><a href="#">PLAYSTATION</a></li>
+                        <li><a href="#">XBOX</a></li>
+                        <li><a href="#">MOBILE</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <button class="dropbtn">SOBRE<i class="fas fa-chevron-down"></i></button>
-                    <ul class="dropdown-content">
-                        <li><a href="/Clovis Games/CG.html"><i class="fas fa-info-circle"></i> Clovis Games</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=NhHb9usKy6Q"><i class="fab fa-youtube"></i> Francis</a></li>
-                    </ul>
+                <li>
+                    <a href="#" class="desktop-item">MAIS</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">MAIS</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="../IMAGENS/pirataJOGANDO.jpeg" alt="">
+                            </div>
+                            <div class="row">
+                                <header>DESTAQUES</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">LANÇAMENTOS</a></li>
+                                    <li><a href="#">EM BREVE</a></li>
+                                    <li><a href="#">PROMOÇÕES</a></li>
+                                    <li><a href="#">MAIS JOGADOS</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>COMO BAIXAR</header>
+                                <ul class="mega-links">
+                                    <li><a href="/COMOBAIXAR/COMOBAIXAR.html">TUTORIAL</a></li>
+                                    <li><a href="/COMOBAIXAR/mods.html">COMO BAIXAR MODS</a></li>
+                                    <li><a href="https://www.nexusmods.com">NEXUS MODS</a></li>
+                                    <li><a href="#">DUVIDA?</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>REDES</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">INSTAGRAM</a></li>
+                                    <li><a href="#">LINKEDIN</a></li>
+                                    <li><a href="#">GMAIL</a></li>
+                                    <li><a href="#">GITHUB</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
-                <li class="dropdown">
-                    <button class="dropbtn">COMO BAIXAR <i class="fas fa-chevron-down"></i></button>
-                    <ul class="dropdown-content">
-                        <li><a href="/COMOBAIXAR/COMOBAIXAR.html"><i class="fas fa-download"></i> Tutorial</a></li>
-                        <li><a href="/COMOBAIXAR/COMOBAIXAR copy.html"><i class="fas fa-universal-access"></i> Tutorial acessível</a></li>
-                        <li><a href="/COMOBAIXAR/mods.html"><i class="fas fa-puzzle-piece"></i> Como baixar Mods</a></li>
-                    </ul>
-                </li>
+                <li><a href="/Clovis Games/CG.html">CLOVIS GAMES</a></li>
             </ul>
-        </nav>
-        <div class="header-icons">
-            <a href="#" class="profile-icon" aria-label="Profile">
-                <i class="bx bx-user"></i>
-            </a>
-            <a href="#" class="cart-icon1" aria-label="Cart">
-                <i class="bx bx-cart"></i>
-            </a>
+
+            <div class="icons">
+                <a href="#" class="cart-icon1"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+            </div>
+
+            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
+    </nav>
 
-        <button class="mobile-menu-toggle"><i class="bx bx-menu"></i></button>
-
-        <script>
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            mobileMenuToggle.addEventListener('click', function () {
-                navLinks.classList.toggle('active');
-            });
-
-            const dropdownLinks = document.querySelectorAll('.dropdown-content li');
-
-            dropdownLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    navLinks.classList.remove('active');
-                });
-            });
-        </script>
-    </header>
     <main>
         <h1>Catálogo de Jogos</h1>
 
@@ -102,11 +112,13 @@
                     <a href="#" onclick="filterByCategory('Corrida')"><i class="fas fa-car"></i> Corrida</a>
                     <a href="#" onclick="filterByCategory('Multijogador')"><i class="fas fa-users"></i> Multijogador</a>
                     <a href="#" onclick="filterByCategory('Simulação')"><i class="fas fa-sim-card"></i> Simulação</a>
-                    <a href="#" onclick="filterByCategory('Violência')"><i class="fas fa-skull-crossbones"></i>Violência</a>
+                    <a href="#" onclick="filterByCategory('Violência')"><i
+                            class="fas fa-skull-crossbones"></i>Violência</a>
                     <a href="#" onclick="filterByCategory('Mitologia')"><i class="fas fa-ankh"></i> Mitologia</a>
                     <a href="#" onclick="filterByCategory('Stealth')"><i class="fas fa-mask"></i> Stealth</a>
                     <a href="#" onclick="filterByCategory('Super-Heróis')"><i class="fas fa-spider"></i>Super-Heróis</a>
-                    <a href="#" onclick="filterByCategory('Velho Oeste')"><i class="fas fa-hat-cowboy"></i> Velho Oeste</a>
+                    <a href="#" onclick="filterByCategory('Velho Oeste')"><i class="fas fa-hat-cowboy"></i> Velho
+                        Oeste</a>
                     <a href="#" onclick="filterByCategory('Guerrilha')"><i class="fas fa-fist-raised"></i> Guerrilha</a>
                     <a href="#" onclick="filterByCategory('Samurai')"><i class="fas fa-user-ninja"></i> Samurai</a>
                     <a href="#" onclick="filterByCategory('Fantasia')"><i class="fas fa-magic"></i> Fantasia</a>
@@ -123,11 +135,10 @@
 
         </div>
         <div class="games-grid" id="gamesGrid">
-            <div class="game-card" data-category="Cyberpunk Ação RPG Mundo Aberto Nudez">
-                <a href="/JOGOS/JOGO(CYBERPUNK).html">
-                    <img src="../IMAGENS/cyberpunk.jpg" alt="Jogo 1">
-                    <h3>Cyberpunk 2077</h3>
-                </a>
+            <div class="game-card" data-category="Cyberpunk Ação RPG Mundo Aberto Nudez" data-id="1"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/cyberpunk.jpg" alt="Jogo 1">
+                <h3>Cyberpunk 2077</h3>
 
                 <div class="platform-icons">
                     <i class="fab fa-xbox"></i>
@@ -138,33 +149,37 @@
                 <p>Embarque em uma aventura emocionante em um futuro distópico, onde você pode explorar uma cidade
                     vibrante com gráficos incríveis e participar de missões desafiadoras.</p>
 
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+                <button class="add-to-cart-btn" onclick="addToCart(1); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
+
             </div>
-            <div class="game-card" data-category="Corrida Aventura Mundo Aberto Multijogador Simulação">
-                <a href="/JOGOS/JOGO(FORZA5).html">
-                    <img src="../IMAGENS/forza-gamescom-hero-1.jpg" alt="Jogo 2">
-                    <h3>Forza Horizon 5</h3>
-                </a>
+            <div class="game-card" data-category="Corrida Aventura Mundo Aberto Multijogador Simulação" data-id="2"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/forza-gamescom-hero-1.jpg" alt="Jogo 2">
+                <h3>Forza Horizon 5</h3>
+
                 <div class="platform-icons">
                     <i class="fab fa-xbox"></i>
                     <i class="fab fa-windows"></i>
                 </div>
                 <p>Experimente a emoção das corridas em um mundo aberto espetacular. Enfrente desafios estratégicos
                     e conquiste vitórias em diversas paisagens deslumbrantes.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(2); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Luta Ação Violência Multijogador História">
-                <a href="/JOGOS/JOGO(MK11).html">
-                    <img src="../IMAGENS/mk11.avif" alt="Jogo 3">
-                    <h3>Mortal Kombat 11</h3>
-                </a>
+            <div class="game-card" data-category="Luta Ação Violência Multijogador História" data-id="3"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/mk11.avif" alt="Jogo 3">
+                <h3>Mortal Kombat 11</h3>
+
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-xbox"></i>
@@ -172,17 +187,18 @@
                 </div>
                 <p>Participe de intensas lutas com personagens icônicos e habilidades únicas. Explore mundos
                     fantásticos e desafie outros jogadores em batalhas épicas.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(3); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Suspense Ação Terror Narrativa Psicológico">
-                <a href="/JOGOS/JOGO(ALAN2).html">
-                    <img src="../IMAGENS/alanwake2.avif" alt="Jogo 4">
-                    <h3>Alan Wake 2</h3>
-                </a>
+            <div class="game-card" data-category="Suspense Ação Terror Narrativa Psicológico" data-id="4"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/alanwake2.avif" alt="Jogo 4">
+                <h3>Alan Wake 2</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-xbox"></i>
@@ -190,18 +206,19 @@
                 </div>
                 <p>Mergulhe em uma história de suspense e mistério enquanto luta contra forças sombrias. Utilize
                     suas habilidades estratégicas para sobreviver e desvendar a verdade.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
-                    <i class="bx bx-cart-add cart-icon"></i>
-                </button>
 
+                <button class="add-to-cart-btn" onclick="addToCart(4); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
+                    <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
+                </button>
             </div>
 
-            <div class="game-card" data-category="Aventura Mundo Aberto Velho Oeste Ação História">
-                <a href="/JOGOS/JOGO(RDR2).html">
-                    <img src="../IMAGENS/red dead2.jpg" alt="Jogo 5">
-                    <h3>Red Dead 2</h3>
-                </a>
+            <div class="game-card" data-category="Aventura Mundo Aberto Velho Oeste Ação História" data-id="5"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/red dead2.jpg" alt="Jogo 5">
+                <h3>Red Dead 2</h3>
+
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-xbox"></i>
@@ -209,17 +226,18 @@
                 </div>
                 <p>Explore o vasto mundo aberto do Velho Oeste, repleto de missões emocionantes e aventuras.
                     Experimente a vida de um fora-da-lei em uma narrativa envolvente.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(5); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Ação Aventura Difícil Samurai Exploração">
-                <a href="/JOGOS/JOGO(SEKIRO).html">
-                    <img src="../IMAGENS/SEKIRO.jpg" alt="Jogo 6">
-                    <h3>Sekiro</h3>
-                </a>
+            <div class="game-card" data-category="Ação Aventura Difícil Samurai Exploração" data-id="6"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/SEKIRO.jpg" alt="Jogo 6">
+                <h3>Sekiro</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-xbox"></i>
@@ -227,17 +245,18 @@
                 </div>
                 <p>Enfrente desafios intensos em um mundo de samurais e ninjas. Utilize suas habilidades de combate
                     para vencer inimigos formidáveis e descobrir segredos antigos.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(6); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="RPG Ação Mundo Aberto Fantasia Difícil">
-                <a href="/JOGOS/JOGO(ELDENRING).html">
-                    <img src="../IMAGENS/dl3d5ccidn9wlkemhfjr.jpg" alt="Jogo 7">
-                    <h3>Elden Ring</h3>
-                </a>
+            <div class="game-card" data-category="RPG Ação Mundo Aberto Fantasia Difícil" data-id="7"
+                onclick="showGameDetails(this)">
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png" alt="Jogo 7">
+                <h3>Elden Ring</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-xbox"></i>
@@ -245,17 +264,18 @@
                 </div>
                 <p>Aventurar-se em um vasto mundo de fantasia repleto de perigos e mistérios. Combine suas
                     habilidades e estratégias para enfrentar criaturas temíveis e desvendar os segredos do anel.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(7); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Ação Tiro Mundo Aberto Guerrilha Aventura">
-                <a href="/JOGOS/JOGO(FARCRY6).html">
-                    <img src="../IMAGENS/farcry6.jpg" alt="Jogo 8">
-                    <h3>Far Cry 6</h3>
-                </a>
+            <div class="game-card" data-category="Ação Tiro Mundo Aberto Guerrilha Aventura" data-id="8"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/farcry6.jpg" alt="Jogo 8">
+                <h3>Far Cry 6</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-xbox"></i>
@@ -263,17 +283,18 @@
                 </div>
                 <p>Lidere uma revolução em um país tropical sob um regime opressor. Enfrente batalhas intensas e use
                     suas habilidades para derrubar o ditador e libertar o povo.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(8); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="RPG Aventura Estratégia Fantasia Multijogador">
-                <a href="/JOGOS/JOGO(BG3).html">
-                    <img src="../IMAGENS/baldursgate3.avif" alt="Jogo 9">
-                    <h3>Baldur's Gate 3</h3>
-                </a>
+            <div class="game-card" data-category="RPG Aventura Estratégia Fantasia Multijogador" data-id="9"
+                onclick="showGameDetails(this)">
+                <img src="/IMAGENS/baldursgate3.avif" alt="Jogo 9">
+                <h3>Baldur's Gate 3</h3>
                 <div class="platform-icons">
                     <i class="fab fa-xbox"></i>
                     <i class="fab fa-playstation"></i>
@@ -281,123 +302,152 @@
                 </div>
                 <p>Embarque em uma épica aventura de RPG baseada em Dungeons & Dragons. Forme alianças, tome
                     decisões estratégicas e explore um mundo rico em histórias e desafios.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(9); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
             <div class="game-card" data-category="Ação Aventura Mitologia">
-                <a href="/JOGOS/JOGO(GOWR).html">
-                    <img src="https://t2.tudocdn.net/630481?w=1920&h=1080" alt="God of War Ragnarök">
-                    <h3>God of War Ragnarök</h3>
-                </a>
+                <img src="https://t2.tudocdn.net/630481?w=1920&h=1080" alt="God of War Ragnarök" data-id="10"
+                    onclick="showGameDetails(this)">
+                <h3>God of War Ragnarök</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                 </div>
                 <p>Junte-se a Kratos e Atreus em uma jornada épica pelo mundo nórdico enquanto enfrentam
                     deuses e monstros em busca de respostas.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(10); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Ação Aventura Exploração">
-                <a href="/JOGOS/JOGO(UNCHARTED4).html">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7dNCExKUR0Je4NZN5F33USAkg3H9iUlgv3rSaPjzlEkkbedI_SxnWRp5yIfkBpInthoLg7VziqRHLtRS7osUz8auKYrb2uEbILe5psoCVuWfTt2zxifRNwOsNfFilrJK58Yd-k1MAky8/s1600/Uncharted-4-capa.jpg"
-                        alt="Uncharted 4: A Thief's End">
-                    <h3>Uncharted 4: A Thief's End</h3>
-                </a>
+            <div class="game-card" data-category="Ação Aventura Exploração" data-id="11"
+                onclick="showGameDetails(this)">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7dNCExKUR0Je4NZN5F33USAkg3H9iUlgv3rSaPjzlEkkbedI_SxnWRp5yIfkBpInthoLg7VziqRHLtRS7osUz8auKYrb2uEbILe5psoCVuWfTt2zxifRNwOsNfFilrJK58Yd-k1MAky8/s1600/Uncharted-4-capa.jpg"
+                    alt="Uncharted 4: A Thief's End">
+                <h3>Uncharted 4: A Thief's End</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-windows"></i>
                 </div>
                 <p>Aventure-se com Nathan Drake em sua última caça ao tesouro em locais exóticos e enfrente
                     inimigos perigosos em busca de riquezas incalculáveis.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(11); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Ação Aventura Super-Heróis">
-                <a href="/JOGOS/JOGO(MARVELSSPIDERMAN).html">
-                    <img src="https://jogandocasualmente.com.br/wp-content/uploads/2020/11/review-marvels-spider-man-ps4-capa.jpg"
-                        alt="Marvel's Spider-Man">
-                    <h3>Marvel's Spider-Man</h3>
-                </a>
+            <div class="game-card" data-category="Ação Aventura Super-Heróis" data-id="12"
+                onclick="showGameDetails(this)">
+                <img src="https://jogandocasualmente.com.br/wp-content/uploads/2020/11/review-marvels-spider-man-ps4-capa.jpg"
+                    alt="Marvel's Spider-Man">
+                <h3>Marvel's Spider-Man</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-windows"></i>
                 </div>
                 <p>Viva a vida dupla de Peter Parker enquanto enfrenta vilões icônicos e protege a cidade de
                     Nova York em um jogo de ação e aventura eletrizante.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(12); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Ação Aventura Stealth">
-                <a href="/JOGOS/JOGO(GHOSTTSUSHIMA).html">
-                    <img src="https://jogandocasualmente.com.br/wp-content/uploads/2020/08/review-ghostoftsushima-ps4-1-900x506.jpeg"
-                        alt="Ghost of Tsushima">
-                    <h3>Ghost of Tsushima</h3>
-                </a>
+            <div class="game-card" data-category="Ação Aventura Stealth" data-id="13" onclick="showGameDetails(this)">
+                <img src="https://jogandocasualmente.com.br/wp-content/uploads/2020/08/review-ghostoftsushima-ps4-1-900x506.jpeg"
+                    alt="Ghost of Tsushima">
+                <h3>Ghost of Tsushima</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-windows"></i>
                 </div>
                 <p>Assuma o papel de Jin Sakai, um samurai que deve sacrificar tudo para proteger sua ilha
                     natal contra a invasão mongol, utilizando táticas de combate e stealth.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(13); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
-            <div class="game-card" data-category="Aventura Mundo Aberto RPG">
-                <a href="/JOGOS/JOGO(HORIZONFW).html">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2pKr_zl6OCUSCyvcVM83Wk3mzzl7t6akCQ&s"
-                        alt="Horizon Forbidden West">
-                    <h3>Horizon Forbidden West</h3>
-                </a>
+            <div class="game-card" data-category="Aventura Mundo Aberto RPG" data-id="14"
+                onclick="showGameDetails(this)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc2pKr_zl6OCUSCyvcVM83Wk3mzzl7t6akCQ&s"
+                    alt="Horizon Forbidden West">
+                <h3>Horizon Forbidden West</h3>
                 <div class="platform-icons">
                     <i class="fab fa-playstation"></i>
                     <i class="fab fa-windows"></i>
                 </div>
                 <p>Acompanhe Aloy em uma nova aventura para descobrir os segredos do Oeste Proibido,
                     enfrentando novas ameaças e explorando um mundo vibrante e perigoso.</p>
-                <button class="add-to-cart-btn">
-                    Adicionar ao Carrinho
+
+                <button class="add-to-cart-btn" onclick="addToCart(14); event.stopPropagation();">
+                    <span class="button-text">Adicionar ao Carrinho</span>
                     <i class="bx bx-cart-add cart-icon"></i>
+                    <i class="bx bx-check check-icon"></i>
                 </button>
             </div>
 
         </div>
         <p id="noResultsMessage" style="display:none;">Ops! Jogo não encontrado ☠️</p>
     </main>
+    <br>
+    <div class="wave-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
     <footer>
+        <div class="ocean">
+            <div class="bubble bubble--1"></div>
+            <div class="bubble bubble--2"></div>
+            <div class="bubble bubble--3"></div>
+            <div class="bubble bubble--4"></div>
+            <div class="bubble bubble--5"></div>
+            <div class="bubble bubble--6"></div>
+            <div class="bubble bubble--7"></div>
+            <div class="bubble bubble--8"></div>
+            <div class="bubble bubble--9"></div>
+            <div class="bubble bubble--10"></div>
+            <div class="bubble bubble--11"></div>
+            <div class="bubble bubble--12"></div>
+            <div id="octocat"></div>
+        </div>
         <div class="footer-top">
             <div class="container">
+                <!-- Seção de Informações Principais -->
                 <div class="footer-section">
                     <h4>Clovis Games</h4>
-                    <p>"Quando o peso do custo faz da cultura um privilégio, o povo se volta para alternativas não
-                        convencionais em busca do que deveria ser para todos."</p>
-                    <img src="../IMAGENS/logo100-removebg-preview.png" alt="Clovis Games Logo" class="footer-logo">
+                    <p class="quote">"Quando o peso do custo faz da cultura um privilégio, o povo se volta para
+                        alternativas não convencionais em busca do que deveria ser para todos."</p>
+                    <img src="/IMAGENS/LOGO_CLOVISGAMES.png" alt="Clovis Games Logo" class="footer-logo">
                 </div>
 
+                <!-- Seção de Conexão -->
                 <div class="footer-section">
                     <h4>Conecte-se Conosco</h4>
                     <div class="social-links">
                         <a href="#"><i class='bx bxl-instagram'></i></a>
-                        <a href="#"><i class='bx bxl-gmail'></i></a>
                         <a href="#"><i class='bx bxl-linkedin'></i></a>
                         <a href="https://github.com/TavinScapi/ClovisGamesOFICIAL.git"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
-                <br>
+
+                <!-- Seção de Aviso -->
                 <div class="footer-section important">
                     <h4>Aviso Importante</h4>
                     <p>Nós não crackeamos os jogos! Nós apenas direcionamos você ao conteúdo.</p>
@@ -405,6 +455,7 @@
             </div>
         </div>
 
+        <!-- Texto no rodapé inferior -->
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; 2024 Clovis Games. Todos os direitos reservados. Navegue com segurança, Marujo!</p>
