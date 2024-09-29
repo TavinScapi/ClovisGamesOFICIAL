@@ -1,11 +1,5 @@
-/* ========================================
-   Cabeçalho
-======================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Estilo Global */
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
 
 body {
     font-family: Poppins, sans-serif;
@@ -24,7 +18,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../barcofundo.jpg');
+    background-image: url("../barcofundo.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.5;
@@ -32,205 +26,388 @@ body::before {
     transition: opacity 0.5s ease;
 }
 
-/* Estilo do Cabeçalho */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #11212d; /* Azul Escuro */
-    color: #ffffff; /* Branco */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav,
+.icons a,
+.nav-links li a {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 99;
+    width: 100%;
+    background: #11212d;
 }
 
-.logo img {
-    height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
-}
-
-/* Estilo da Navegação */
-.nav-links {
+.icons {
     display: flex;
-    list-style: none;
+    gap: 15px;
+    align-items: center;
+}
+
+.icons a {
+    color: #d7b160;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: #007bff;
+    /* Cor ao passar o mouse */
+}
+
+
+nav .wrapper {
+    position: relative;
+    max-width: 1300px;
+    padding: 0px 30px;
+    height: 70px;
+    line-height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper .nav-links {
+    display: inline-flex;
 }
 
 .nav-links li {
-    margin: 0 20px;
-    position: relative;
-}
-
-.nav-links a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: #ffffff; /* Branco */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #1c74d9; /* Azul Médio */
-}
-
-/* Estilo Dropdown */
-.dropbtn {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    background-color: transparent;
-    color: #ffffff; /* Branco */
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.dropbtn i {
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #11212d; /* Azul Escuro */
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-    z-index: 100;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    top: 100%;
-    left: 0;
-}
-
-.dropdown-content li {
     list-style: none;
 }
 
-.dropdown-content a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    color: #ffffff; /* Branco */
-    padding: 12px 16px;
+.nav-links li a {
+    color: #d7b160;
     text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-.dropdown-content a:hover {
-    background-color: #0f3f76; /* Azul Médio */
+.nav-links ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.nav-links li a:hover {
+    background: #3A3B3C;
+}
+
+.nav-links .mobile-item {
+    display: none;
+}
+
+.nav-links .drop-menu {
+    position: absolute;
+    background: #242526;
+    width: 180px;
+    line-height: 45px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box {
+    transition: all 0.3s ease;
+    top: 70px;
     opacity: 1;
     visibility: visible;
 }
 
-.dropdown:hover .dropbtn {
-    color: #1c74d9; /* Azul Médio */
+.drop-menu li a {
+    width: 100%;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 0px;
 }
 
-.dropdown:hover .dropbtn i {
-    transform: rotate(-180deg);
+.mega-box {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
 }
 
-/* Estilo dos Ícones no Cabeçalho */
-.header-icons {
+.mega-box .content {
+    background: #242526;
+    padding: 25px 20px;
     display: flex;
-    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.header-icons a {
-    font-family: 'Poppins', sans-serif;
+.mega-box .content .row {
+    width: calc(25% - 30px);
+    line-height: 45px;
+}
+
+.content .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content .row header {
+    color: #d7b160;
+    font-size: 20px;
     font-weight: 500;
-    margin-left: 20px;
-    color: #ffffff; /* Branco */
-    font-size: 24px;
-    transition: color 0.3s ease;
 }
 
-.header-icons a:hover {
-    color: #1c74d9; /* Azul Médio */
+.content .row .mega-links {
+    margin-left: -40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-/* Estilo do Menu Mobile */
-.mobile-menu-toggle {
-    display: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #ffffff; /* Branco */
+.row .mega-links li {
+    padding: 0 20px;
+}
+
+.row .mega-links li a {
+    padding: 0px;
+    padding: 0 20px;
+    color: #d9d9d9;
+    font-size: 17px;
+    display: block;
+}
+
+.row .mega-links li a:hover {
+    color: #f2f2f2;
+}
+
+.wrapper .btn {
+    color: #fff;
+    font-size: 20px;
     cursor: pointer;
+    display: none;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #11212d; /* Azul Escuro */
+.wrapper .btn.close-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+nav .logo img {
+    height: 60px;
+    /* Aumente ou diminua conforme necessário */
+    width: auto;
+    /* Mantém a proporção da imagem */
+    margin-right: 20px;
+    /* Adiciona espaço entre a logo e o menu */
+    display: block;
+    /* Garante que ela se comporte como um bloco */
+    transition: transform 0.3s ease;
+    object-fit: contain;
+    /* Garante que a imagem não seja cortada */
+}
+
+nav .logo img:hover {
+    transform: scale(1.1);
+    /* Efeito de zoom suave ao passar o mouse */
+}
+
+@media screen and (max-width: 970px) {
+    .wrapper .btn {
+        display: block;
+    }
+
+    .wrapper .nav-links {
+        position: fixed;
+        height: 100vh;
         width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
+        max-width: 350px;
+        top: 0;
+        left: -100%;
+        background: #11212d;
+        display: block;
+        padding: 50px 10px;
+        line-height: 50px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease;
     }
 
-    .nav-links.active {
-        display: flex;
+    /* custom scroll bar */
+    ::-webkit-scrollbar {
+        width: 10px;
     }
 
-    .dropdown-content {
-        position: relative;
-        background-color: #11212d; /* Azul Escuro */
+    ::-webkit-scrollbar-track {
+        background: #242526;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #3A3B3C;
+    }
+
+    #menu-btn:checked~.nav-links {
+        left: 0%;
+    }
+
+    #menu-btn:checked~.btn.menu-btn {
+        display: none;
+    }
+
+    #close-btn:checked~.btn.menu-btn {
+        display: block;
+    }
+
+    .nav-links li {
+        margin: 15px 10px;
+    }
+
+    .nav-links li a {
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .nav-links .drop-menu {
+        position: static;
+        opacity: 1;
+        top: 65px;
+        visibility: visible;
+        padding-left: 20px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease;
+    }
+
+    #showDrop:checked~.drop-menu,
+    #showMega:checked~.mega-box {
+        max-height: 100%;
+    }
+
+    .nav-links .desktop-item {
+        display: none;
+    }
+
+    .nav-links .mobile-item {
+        display: block;
+        color: #d7b160;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links .mobile-item:hover {
+        background: #3A3B3C;
+    }
+
+    .drop-menu li {
+        margin: 0;
+    }
+
+    .drop-menu li a {
+        border-radius: 5px;
+        font-size: 18px;
+    }
+
+    .mega-box {
+        position: static;
+        top: 65px;
         opacity: 1;
         visibility: visible;
+        padding: 0 20px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
     }
 
-    .dropdown-content a {
-        color: #ffffff; /* Branco */
-        padding: 10px;
-        text-align: left;
+    .mega-box .content {
+        box-shadow: none;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
     }
 
-    .dropdown:hover .dropdown-content {
-        display: block;
+    .mega-box .content .row {
+        width: 100%;
+        margin-bottom: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .header-icons a {
-        margin-left: 10px;
+    .mega-box .content .row:nth-child(1),
+    .mega-box .content .row:nth-child(2) {
+        border-top: 0px;
     }
 
-    .mobile-menu-toggle {
-        display: block;
+    .content .row .mega-links {
+        border-left: 0px;
+        padding-left: 15px;
     }
+
+    .row .mega-links li {
+        margin: 0;
+    }
+
+    .content .row header {
+        font-size: 19px;
+    }
+}
+
+nav input {
+    display: none;
+}
+
+/* Estilo do Título */
+main h1 {
+    font-family: "Pirata One", sans-serif;
+    font-size: 48px;
+    color: #11212d;
+    /* Azul Médio */
+    text-align: center;
+    margin-top: 10PX;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra do texto */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* ========================================
    Estilos gerais
 ======================================== */
-/* Estilo do Título */
-main h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 48px;
-    color: #11212d; /* Azul Médio */
+
+.body-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra do texto */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding: 0 30px;
+}
+
+.body-text div {
+    font-size: 45px;
+    font-weight: 600;
 }
 
 .search-filter-bar {
@@ -256,23 +433,36 @@ main h1 {
 }
 
 #noResultsMessage {
-    display: none; /* Mantém a mensagem oculta até ser necessária */
-    color: #ff6666; /* Cor vermelha um pouco mais suave */
-    font-size: 20px; /* Aumentei um pouco mais o tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    text-align: center; /* Centraliza o texto */
-    padding: 20px; /* Espaçamento interno */
-    background: linear-gradient(45deg, #1c3b52, #11212d); /* Fundo com gradiente diagonal */
-    border-radius: 12px; /* Borda ainda mais arredondada */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra maior para dar mais profundidade */
-    margin-top: 20px; /* Espaço acima da mensagem */
-    animation: fadeIn 0.5s ease-in-out, shake 0.5s ease-in-out 1s; /* Animação de fade e shake */
-    border: 2px solid #ff4c4c; /* Borda vermelha ao redor para destacar */
+    display: none;
+    /* Mantém a mensagem oculta até ser necessária */
+    color: #ff6666;
+    /* Cor vermelha um pouco mais suave */
+    font-size: 20px;
+    /* Aumentei um pouco mais o tamanho da fonte */
+    font-weight: bold;
+    /* Negrito */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 20px;
+    /* Espaçamento interno */
+    background: linear-gradient(45deg, #1c3b52, #11212d);
+    /* Fundo com gradiente diagonal */
+    border-radius: 12px;
+    /* Borda ainda mais arredondada */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    /* Sombra maior para dar mais profundidade */
+    margin-top: 20px;
+    /* Espaço acima da mensagem */
+    animation: fadeIn 0.5s ease-in-out, shake 0.5s ease-in-out 1s;
+    /* Animação de fade e shake */
+    border: 2px solid #ff4c4c;
+    /* Borda vermelha ao redor para destacar */
 }
 
 .surprise-btn {
-    background-color: #1c74d9; /* Azul Médio */
-    color: white;
+    background-color: #11212d;
+    /* Azul Médio */
+    color: #d7b160;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -281,7 +471,8 @@ main h1 {
 }
 
 .surprise-btn:hover {
-    background-color: #11212d; /* Azul Escuro */
+    background-color: #3A3B3C;
+    /* Azul Escuro */
 }
 
 /* Esconder o botão em dispositivos móveis */
@@ -292,13 +483,16 @@ main h1 {
 }
 
 .highlight {
-    border: 2px solid #1c74d9; /* Azul Médio */
+    border: 2px solid #1c74d9;
+    /* Azul Médio */
     box-shadow: 0px 0px 10px #1c74d9;
 }
 
 #resetButton {
-    background-color: #1c74d9; /* Azul Médio */
-    color: #ffffff; /* Branco */
+    background-color: #1c74d9;
+    /* Azul Médio */
+    color: #ffffff;
+    /* Branco */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -308,7 +502,8 @@ main h1 {
 }
 
 #resetButton:hover {
-    background-color: #155a9c; /* Tom mais escuro para hover */
+    background-color: #155a9c;
+    /* Tom mais escuro para hover */
 }
 
 
@@ -317,6 +512,7 @@ main h1 {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -324,9 +520,26 @@ main h1 {
 
 /* Animação de shake para chamar atenção */
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-    20%, 40%, 60%, 80% { transform: translateX(10px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
 }
 
 /* Tamanho */
@@ -354,6 +567,36 @@ main h1 {
     background: #155a9e;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.body-text div {
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte ao texto */
+}
+
+.search-filter-bar input[type="text"] {
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte ao input */
+}
+
+#noResultsMessage {
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte à mensagem */
+}
+
+.surprise-btn {
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte ao botão */
+}
+
+#resetButton {
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte ao botão de reset */
+}
+
+
 /* ========================================
    Dropdown de Categorias
 ======================================== */
@@ -364,8 +607,8 @@ main h1 {
 .category-dropdown .dropbtn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
-    color: white;
+    background-color: #11212d;
+    color: #d7b160;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -373,10 +616,12 @@ main h1 {
     align-items: center;
     gap: 10px;
     transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte Poppins */
 }
 
 .category-dropdown .dropbtn:hover {
-    background-color: #0056b3;
+    background-color: #3A3B3C;
 }
 
 /* Estilo do dropdown para categorias */
@@ -385,7 +630,7 @@ main h1 {
     position: absolute;
     background-color: #11212d;
     min-width: 100%;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
     overflow: hidden;
@@ -393,6 +638,8 @@ main h1 {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte Poppins */
 }
 
 /* Mostrar o dropdown ao passar o mouse ou ao clicar */
@@ -416,6 +663,8 @@ main h1 {
     border-radius: 4px;
     transition: background-color 0.3s ease;
     gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    /* Aplica a fonte Poppins */
 }
 
 .category-dropdown .dropdown-content a:hover {
@@ -430,11 +679,35 @@ main h1 {
     }
 }
 
-/* Layout para mobile: 1 coluna */
+/* Layout para mobile: 1 coluna com scrollbar */
 @media (max-width: 767px) {
     .category-dropdown .dropdown-content {
         grid-template-columns: 1fr;
+        max-height: 200px;
+        /* Defina uma altura máxima para o dropdown */
+        overflow-y: auto;
+        /* Habilita a barra de rolagem */
     }
+}
+
+/* Tamanho */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Fundo */
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+/* Cor Normal */
+::-webkit-scrollbar-thumb {
+    background: #11212d;
+}
+
+/* Cor com o mouse em Cima */
+::-webkit-scrollbar-thumb:hover {
+    background: #155a9e;
 }
 
 /* ========================================
@@ -451,9 +724,12 @@ main h1 {
 
 .game-card {
     display: flex;
-    flex-direction: column; /* Organiza os itens em coluna */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    align-items: center; /* Centraliza os itens horizontalmente */
+    flex-direction: column;
+    /* Organiza os itens em coluna */
+    justify-content: center;
+    /* Centraliza os itens verticalmente */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
     background-color: #11212d;
     border-radius: 10px;
     overflow: hidden;
@@ -497,6 +773,7 @@ main h1 {
     margin-top: 15px;
     transition: background-color 0.3s ease;
     width: 100%;
+    position: relative;
 }
 
 .add-to-cart-btn:hover {
@@ -515,17 +792,42 @@ main h1 {
     transform: translateX(0);
 }
 
+.check-icon {
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.add-to-cart-btn.clicked {
+    background-color: #28a745;
+}
+
+.add-to-cart-btn.clicked .cart-icon {
+    display: none;
+}
+
+.add-to-cart-btn.clicked .check-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 .game-card a {
     text-decoration: none;
     color: inherit;
 }
 
 .game-card a:visited h3 {
-    color: #ffffff; /* Mantém a cor original, evitando o roxo de link visitado */
+    color: #ffffff;
+    /* Mantém a cor original, evitando o roxo de link visitado */
 }
 
 .game-card a:hover h3 {
-    color: #1c74d9; /* Cor ao passar o mouse, se desejar */
+    color: #1c74d9;
+    /* Cor ao passar o mouse, se desejar */
 }
 
 .platform-icons {
@@ -544,17 +846,157 @@ main h1 {
 
 
 
+
+
+
+
+
+
+
 /* ========================================
    Rodapé
 ======================================== */
 
-footer {
-    background-color: #11212d;
-    color: #fff;
-    padding: 40px 0;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 15px;
+.bubble {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: white;
+    bottom: -30px;
+    opacity: 0.2;
+    animation: bubble 15s ease-in-out infinite,
+        sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0%);
+        opacity: 0.2;
+    }
+
+    80% {
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(-75vh);
+        /* Faz as bolhas desaparecerem antes das ondas */
+        opacity: 0;
+        /* As bolhas desaparecem antes de atingir as ondas */
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 200px;
+    }
+}
+
+/* Ajuste individual de cada bolha */
+.bubble--1 {
+    left: 10%;
+    animation-delay: 0.5s;
+    animation-duration: 16s;
+    opacity: 0.2;
+}
+
+.bubble--2 {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    opacity: 0.1;
+}
+
+.bubble--3 {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-delay: 5s;
+    animation-duration: 20s;
+    opacity: 0.3;
+}
+
+.bubble--4 {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+    opacity: 0.2;
+}
+
+.bubble--5 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    animation-delay: 10s;
+    animation-duration: 15s;
+    opacity: 0.1;
+}
+
+.bubble--6 {
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-delay: 3s;
+    animation-duration: 30s;
+    opacity: 0.4;
+}
+
+.bubble--7 {
+    width: 15px;
+    height: 15px;
+    left: 90%;
+    animation-delay: -7s;
+    animation-duration: 25s;
+    opacity: 0.3;
+}
+
+.bubble--9 {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom: 30px;
+    animation-delay: -5s;
+    animation-duration: 19s;
+    opacity: 0.2;
+}
+
+.bubble--10 {
+    width: 40px;
+    height: 40px;
+    left: 30%;
+    bottom: 20px;
+    animation-delay: -21s;
+    animation-duration: 16s;
+    opacity: 0.3;
+}
+
+.bubble--11 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    bottom: 30px;
+    animation-delay: -13.75s;
+    animation-duration: 20s;
+    opacity: 0.3;
+}
+
+.bubble--11 {
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    bottom: 30px;
+    animation-delay: -10.5s;
+    animation-duration: 19s;
+    opacity: 0.3;
 }
 
 .footer-logo {
@@ -569,6 +1011,10 @@ footer {
 
 .footer-section {
     margin-bottom: 20px;
+}
+
+.quote {
+    font-family: "Pirata One", sans-serif;
 }
 
 .footer-section h4 {
@@ -616,21 +1062,134 @@ footer {
 }
 
 .footer-section.important p {
-    color: red; /* Cor vermelha para o texto da seção de aviso importante */
+    color: red;
+    /* Cor vermelha para o texto da seção de aviso importante */
 }
 
 .footer-section.important h4 {
-    color: red; /* Cor vermelha para o texto da seção de aviso importante */
+    color: red;
+    /* Cor vermelha para o texto da seção de aviso importante */
 }
 
 .social-links a {
-    margin: 0 10px; /* Espaçamento entre os ícones */
-    font-size: 24px; /* Tamanho inicial dos ícones */
-    color: #ffffff; /* Cor dos ícones */
-    transition: font-size 0.3s ease; /* Transição suave ao mudar o tamanho */
-    
+    margin: 0 10px;
+    /* Espaçamento entre os ícones */
+    font-size: 24px;
+    /* Tamanho inicial dos ícones */
+    color: #ffffff;
+    /* Cor dos ícones */
+    transition: font-size 0.3s ease;
+    /* Transição suave ao mudar o tamanho */
+
 }
 
 .social-links a:hover {
-    color: #1c74d9; /* Cor dos ícones ao passar o mouse */
+    color: #1c74d9;
+    /* Cor dos ícones ao passar o mouse */
+}
+
+footer {
+    position: relative;
+    background-color: #11212d;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.ocean {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #000000, #11212d);
+    z-index: 0;
+}
+
+
+.footer-top,
+.footer-bottom {
+    position: relative;
+    z-index: 10;
+    /* Mantém o conteúdo do rodapé acima das animações do oceano */
+}
+
+
+/* Ondas no topo do rodapé */
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    /* Altura das ondas */
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    background: #11212d;
+    /* Cor das ondas */
+}
+
+.wave1 {
+    animation: waveAnimation1 8s infinite linear;
+    clip-path: polygon(0 60%, 25% 70%, 50% 60%, 75% 70%, 100% 60%, 100% 100%, 0% 100%);
+}
+
+.wave2 {
+    opacity: 0.6;
+    animation: waveAnimation2 10s infinite linear;
+    clip-path: polygon(0 55%, 25% 65%, 50% 55%, 75% 65%, 100% 55%, 100% 100%, 0% 100%);
+}
+
+.wave3 {
+    opacity: 0.4;
+    animation: waveAnimation3 12s infinite linear;
+    clip-path: polygon(0 50%, 25% 60%, 50% 50%, 75% 60%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes waveAnimation1 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(-5px);
+        /* Leve movimento para cima */
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes waveAnimation2 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(-3px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes waveAnimation3 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(-2px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
 }
