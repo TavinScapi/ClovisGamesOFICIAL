@@ -1,0 +1,1861 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+
+
+/* ---------------------------------
+   Header
+---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    background: #11212d;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icons a {
+    color: #d7b160;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: #007bff;
+    /* Cor ao passar o mouse */
+}
+
+
+nav .wrapper {
+    position: relative;
+    max-width: 1300px;
+    padding: 0px 30px;
+    height: 70px;
+    line-height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper .nav-links {
+    display: inline-flex;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #d7b160;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background: #3A3B3C;
+}
+
+.nav-links .mobile-item {
+    display: none;
+}
+
+.nav-links .drop-menu {
+    position: absolute;
+    background: #242526;
+    width: 180px;
+    line-height: 45px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box {
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.drop-menu li a {
+    width: 100%;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 0px;
+}
+
+.mega-box {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mega-box .content {
+    background: #242526;
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mega-box .content .row {
+    width: calc(25% - 30px);
+    line-height: 45px;
+}
+
+.content .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content .row header {
+    color: #d7b160;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content .row .mega-links {
+    margin-left: -40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.row .mega-links li {
+    padding: 0 20px;
+}
+
+.row .mega-links li a {
+    padding: 0px;
+    padding: 0 20px;
+    color: #d9d9d9;
+    font-size: 17px;
+    display: block;
+}
+
+.row .mega-links li a:hover {
+    color: #f2f2f2;
+}
+
+.wrapper .btn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.wrapper .btn.close-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+nav .logo img {
+    height: 60px;
+    /* Aumente ou diminua conforme necessário */
+    width: auto;
+    /* Mantém a proporção da imagem */
+    margin-right: 20px;
+    /* Adiciona espaço entre a logo e o menu */
+    display: block;
+    /* Garante que ela se comporte como um bloco */
+    transition: transform 0.3s ease;
+    object-fit: contain;
+    /* Garante que a imagem não seja cortada */
+}
+
+nav .logo img:hover {
+    transform: scale(1.1);
+    /* Efeito de zoom suave ao passar o mouse */
+}
+
+@media screen and (max-width: 970px) {
+    .wrapper .btn {
+        display: block;
+    }
+
+    .wrapper .nav-links {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 350px;
+        top: 0;
+        left: -100%;
+        background: #11212d;
+        display: block;
+        padding: 50px 10px;
+        line-height: 50px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease;
+    }
+
+    /* custom scroll bar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #242526;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #3A3B3C;
+    }
+
+    #menu-btn:checked~.nav-links {
+        left: 0%;
+    }
+
+    #menu-btn:checked~.btn.menu-btn {
+        display: none;
+    }
+
+    #close-btn:checked~.btn.menu-btn {
+        display: block;
+    }
+
+    .nav-links li {
+        margin: 15px 10px;
+    }
+
+    .nav-links li a {
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+    }
+
+    .nav-links .drop-menu {
+        position: static;
+        opacity: 1;
+        top: 65px;
+        visibility: visible;
+        padding-left: 20px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease;
+    }
+
+    #showDrop:checked~.drop-menu,
+    #showMega:checked~.mega-box {
+        max-height: 100%;
+    }
+
+    .nav-links .desktop-item {
+        display: none;
+    }
+
+    .nav-links .mobile-item {
+        display: block;
+        color: #d7b160;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links .mobile-item:hover {
+        background: #3A3B3C;
+    }
+
+    .drop-menu li {
+        margin: 0;
+    }
+
+    .drop-menu li a {
+        border-radius: 5px;
+        font-size: 18px;
+    }
+
+    .mega-box {
+        position: static;
+        top: 65px;
+        opacity: 1;
+        visibility: visible;
+        padding: 0 20px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .mega-box .content {
+        box-shadow: none;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
+    }
+
+    .mega-box .content .row {
+        width: 100%;
+        margin-bottom: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mega-box .content .row:nth-child(1),
+    .mega-box .content .row:nth-child(2) {
+        border-top: 0px;
+    }
+
+    .content .row .mega-links {
+        border-left: 0px;
+        padding-left: 15px;
+    }
+
+    .row .mega-links li {
+        margin: 0;
+    }
+
+    .content .row header {
+        font-size: 19px;
+    }
+}
+
+nav input {
+    display: none;
+}
+
+.body-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.body-text div {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+/* ---------------------------------
+   Game Details Section
+---------------------------------- */
+.game-details {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2a475e;
+    border-radius: 8px;
+}
+
+.game-header {
+    display: flex;
+    gap: 20px;
+}
+
+.capa img {
+    width: 570px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-info h1 {
+    font-size: 2.5em;
+    color: #c6d4df;
+}
+
+.game-info p {
+    margin: 10px 0;
+}
+
+.reviews-positive {
+    color: #66c0f4;
+}
+
+.release-date,
+.developer,
+.publisher {
+    font-weight: bold;
+}
+
+/* ---------------------------------
+   Tags
+---------------------------------- */
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #3b78e7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+/* ---------------------------------
+   Purchase Section
+---------------------------------- */
+.purchase-section {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.purchase-box,
+.game-content {
+    background-color: #17202d;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.purchase-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2em;
+    color: #66c0f4;
+    margin-bottom: 15px;
+}
+
+.cart-button,
+.add-all-button {
+    background-color: #3b78e7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-button:hover,
+.add-all-button:hover {
+    background-color: #145a99;
+}
+
+/* ---------------------------------
+   Game Content Section
+---------------------------------- */
+.game-content h3 {
+    margin-bottom: 10px;
+}
+
+.content-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------
+   DLC Section
+---------------------------------- */
+.dlc-section {
+    margin-top: 30px;
+}
+
+.dlc-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.dlc-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a3a4b;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.dlc-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.dlc-info {
+    flex: 1;
+}
+
+.dlc-info h4 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.dlc-info p {
+    font-size: 1em;
+    color: #b0c4de;
+    margin-bottom: 10px;
+}
+
+.dlc-button {
+    padding: 10px 20px;
+    background-color: #1c74d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.dlc-button:hover {
+    background-color: #145a99;
+}
+
+/* ---------------------------------
+   About Game Section
+---------------------------------- */
+.about-game {
+    margin-top: 30px;
+}
+
+.about-game img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+#toggle-button {
+    background-color: #1c74d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#toggle-button:hover {
+    background-color: #145a99;
+}
+
+
+/* ---------------------------------
+   Two Column Layout for Game Header
+---------------------------------- */
+.game-header {
+    display: flex;
+    gap: 20px;
+}
+
+.capa img {
+    width: 570px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-game {
+    flex: 2;
+    margin-top: 20px;
+}
+
+/* ---------------------------------
+   Game Aside (Right Section)
+---------------------------------- */
+.game-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.game-aside {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    color: #c6d4df;
+}
+
+.game-aside h3 {
+    margin-bottom: 10px;
+    color: #66c0f4;
+}
+
+.game-aside p {
+    margin-bottom: 8px;
+}
+
+.game-aside ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.game-aside li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.game-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* ---------------------------------
+   Rating Box
+---------------------------------- */
+.game-rating {
+    margin-top: 20px;
+}
+
+.game-rating p {
+    font-size: 10px;
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.rating-age {
+    background-color: #c00;
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ---------------------------------
+   Metacritic Score Box
+---------------------------------- */
+.metacritic-rating {
+    margin-top: 20px;
+}
+
+.metacritic-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.metacritic-score {
+    background-color: #6c3;
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ---------------------------------
+   System Requirements Section
+---------------------------------- */
+.system-requirements {
+    background-color: #2a3a4b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.system-requirements h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.requirements-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.minimum-requirements,
+.recommended-requirements {
+    flex: 1;
+    background-color: #1c2b36;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.minimum-requirements h4,
+.recommended-requirements h4 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.minimum-requirements ul,
+.recommended-requirements ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.minimum-requirements ul li,
+.recommended-requirements ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #b0c4de;
+}
+
+.minimum-requirements ul li strong,
+.recommended-requirements ul li strong {
+    color: #ffffff;
+}
+
+/* ---------------------------------
+   Game Duration Section
+---------------------------------- */
+.game-duration {
+    background-color: #2a3a4b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.game-duration h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.game-duration ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-duration ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #b0c4de;
+}
+
+.game-duration ul li strong {
+    color: #ffffff;
+}
+
+/* Estilos gerais do carrossel */
+.carousel-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Ajuste para vídeos (iframe) na seção principal */
+.main-media iframe {
+    width: 100%;
+    /* O vídeo ocupa 100% da largura do container */
+    height: 100%;
+    /* O vídeo ocupa a altura total definida pelo container */
+    object-fit: cover;
+    /* Garante que o vídeo cubra todo o espaço do container */
+    border: none;
+    /* Remove qualquer borda padrão do iframe */
+}
+
+/* Ajuste para garantir que a altura do container seja proporcional */
+.main-media {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    /* Permite que a altura seja ajustada automaticamente */
+    padding-top: 56.25%;
+    /* Proporção de 16:9 (padrão para vídeos) */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-media iframe,
+.main-media img {
+    position: absolute;
+    /* Absoluto para manter a proporção */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.media.hidden {
+    display: none;
+}
+
+.carousel-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Impede a rolagem vertical */
+    padding: 10px;
+    max-height: 110px;
+    /* Altura máxima para manter o alinhamento */
+    align-items: center;
+    /* Centraliza as miniaturas no contêiner */
+}
+
+.carousel-thumbnails img {
+    object-fit: contain;
+    /* Mantém a proporção e evita cortes */
+    width: 100%;
+    height: auto;
+}
+
+.thumbnail {
+    flex: 0 0 150px;
+    height: 90px;
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover img,
+.thumbnail.active img {
+    border-color: #ff9800;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .thumbnail {
+        flex: 0 0 120px;
+        height: 68px;
+    }
+}
+
+/* Barra de rolagem padrão */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #11212d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #155a9e;
+}
+
+/* Barra de rolagem personalizada para a seção de thumbnails */
+.custom-scroll::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+
+/* ---------------------------------
+   Reset Básico
+---------------------------------- */
+body {
+    background: #eee;
+    background-color: #ffffffb4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/IMAGENS/barcofundo.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+/* ---------------------------------
+   Game Details Section
+---------------------------------- */
+.game-details {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2a475e;
+    border-radius: 8px;
+}
+
+.game-header {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.capa img {
+    width: 100%;
+    max-width: 570px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-info h1 {
+    font-size: 2.5em;
+    color: #c6d4df;
+}
+
+.game-info p {
+    margin: 10px 0;
+}
+
+.reviews-positive {
+    color: #66c0f4;
+}
+
+.release-date,
+.developer,
+.publisher {
+    font-weight: bold;
+}
+
+/* ---------------------------------
+   Tags
+---------------------------------- */
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #3b78e7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+/* ---------------------------------
+   Purchase Section
+---------------------------------- */
+.purchase-section {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.purchase-box,
+.game-content {
+    background-color: #17202d;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.purchase-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+.purchase-box p {
+    color: #f0f0f0;
+}
+
+.price {
+    font-size: 2em;
+    color: #66c0f4;
+    margin-bottom: 15px;
+}
+
+.cart-button,
+.add-all-button {
+    background-color: #3b78e7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-button:hover,
+.add-all-button:hover {
+    background-color: #145a99;
+}
+
+/* ---------------------------------
+   Game Content Section
+---------------------------------- */
+.game-content h3 {
+    margin-bottom: 10px;
+}
+
+.game-content p {
+    color: #fff;
+}
+
+.content-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------
+   DLC Section
+---------------------------------- */
+.dlc-section {
+    margin-top: 30px;
+}
+
+.dlc-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a3a4b;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.dlc-item img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.dlc-info {
+    flex: 1;
+}
+
+/* ---------------------------------
+   Carousel Responsivo
+---------------------------------- */
+.carousel-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    max-height: 110px;
+    align-items: center;
+}
+
+/* ---------------------------------
+   About Game Section
+---------------------------------- */
+.about-game img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+#toggle-button {
+    background-color: #1c74d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .game-header {
+        flex-wrap: wrap;
+    }
+
+    .capa img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-info h1 {
+        font-size: 2em;
+    }
+
+    .purchase-section {
+        flex-direction: column;
+    }
+
+    .game-aside {
+        width: 100%;
+    }
+
+    .purchase-box,
+    .game-content {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+    header .logo img {
+        max-width: 120px;
+    }
+
+    .game-info h1 {
+        font-size: 1.8em;
+    }
+
+    .community-link button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        margin-bottom: 5px;
+    }
+}
+
+
+/* ---------------------------------
+   Carrossel Responsivo
+---------------------------------- */
+.carousel-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    max-height: 110px;
+    align-items: center;
+}
+
+.thumbnail {
+    flex: 0 0 150px;
+    height: auto;
+    /* Ajusta a altura automaticamente */
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    /* Manter proporção da imagem */
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover img,
+.thumbnail.active img {
+    border-color: #ff9800;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
+/* Media Queries para as thumbnails */
+@media (max-width: 768px) {
+    .carousel-thumbnails {
+        gap: 8px;
+        /* Reduz o espaço entre miniaturas */
+    }
+
+    .thumbnail {
+        flex: 0 0 120px;
+        /* Miniaturas menores em telas menores */
+        height: auto;
+    }
+
+    .thumbnail img {
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-thumbnails {
+        gap: 5px;
+        /* Ainda menos espaço em telas pequenas */
+        padding: 5px;
+        /* Reduz o padding */
+    }
+
+    .thumbnail {
+        flex: 0 0 100px;
+        /* Miniaturas menores em telas muito pequenas */
+        height: auto;
+    }
+
+    .thumbnail img {
+        border-radius: 5px;
+    }
+}
+
+
+
+
+/* ---------------------------------
+   System Requirements Section
+---------------------------------- */
+.system-requirements {
+    background-color: #2a3a4b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.system-requirements h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.requirements-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.minimum-requirements,
+.recommended-requirements {
+    flex: 1;
+    background-color: #1c2b36;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.minimum-requirements h4,
+.recommended-requirements h4 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.minimum-requirements ul,
+.recommended-requirements ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.minimum-requirements ul li,
+.recommended-requirements ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #b0c4de;
+}
+
+.minimum-requirements ul li strong,
+.recommended-requirements ul li strong {
+    color: #ffffff;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 768px) {
+    .requirements-box {
+        flex-direction: column;
+        /* Empilha verticalmente em telas menores */
+    }
+}
+
+/* ---------------------------------
+   Game Duration Section
+---------------------------------- */
+.game-duration {
+    background-color: #2a3a4b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.game-duration h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.game-duration ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-duration ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #b0c4de;
+}
+
+.game-duration ul li strong {
+    color: #ffffff;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 768px) {
+
+    .requirements-box,
+    .game-duration {
+        flex-direction: column;
+        /* Empilha em telas menores */
+    }
+}
+
+
+/* ---------------------------------
+   Game Content Section
+---------------------------------- */
+.game-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.game-aside {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    color: #c6d4df;
+}
+
+.game-aside h3 {
+    margin-bottom: 10px;
+    color: #66c0f4;
+}
+
+.game-aside p {
+    margin-bottom: 8px;
+}
+
+.game-aside ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.game-aside li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* Media Query para Reorganizar o Layout em Telas Menores */
+@media (max-width: 768px) {
+    .game-content {
+        flex-direction: column;
+        /* Empilha o conteúdo principal */
+    }
+
+    .game-aside {
+        width: 100%;
+        /* Faz com que o game-aside ocupe toda a largura da tela */
+        margin-top: 20px;
+        /* Adiciona um espaçamento em relação ao conteúdo anterior */
+    }
+}
+
+
+/* Estilos gerais do carrossel */
+.carousel-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.media.hidden {
+    display: none;
+}
+
+.carousel-thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Impede a rolagem vertical */
+    padding: 10px;
+    max-height: 110px;
+    /* Altura máxima para manter o alinhamento */
+    align-items: center;
+    /* Centraliza as miniaturas no contêiner */
+}
+
+.thumbnail {
+    flex: 0 0 150px;
+    height: 90px;
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover img,
+.thumbnail.active img {
+    border-color: #ff9800;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .main-media {
+        max-width: 100%;
+        /* O container principal da mídia ocupa toda a largura da tela */
+    }
+
+    .thumbnail {
+        flex: 0 0 120px;
+        height: 68px;
+    }
+}
+
+/* ========================================
+   Rodapé
+======================================== */
+
+.bubble {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: white;
+    bottom: -30px;
+    opacity: 0.2;
+    animation: bubble 15s ease-in-out infinite,
+        sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0%);
+        opacity: 0.2;
+    }
+
+    80% {
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(-75vh);
+        /* Faz as bolhas desaparecerem antes das ondas */
+        opacity: 0;
+        /* As bolhas desaparecem antes de atingir as ondas */
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 200px;
+    }
+}
+
+/* Ajuste individual de cada bolha */
+.bubble--1 {
+    left: 10%;
+    animation-delay: 0.5s;
+    animation-duration: 16s;
+    opacity: 0.2;
+}
+
+.bubble--2 {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    opacity: 0.1;
+}
+
+.bubble--3 {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-delay: 5s;
+    animation-duration: 20s;
+    opacity: 0.3;
+}
+
+.bubble--4 {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+    opacity: 0.2;
+}
+
+.bubble--5 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    animation-delay: 10s;
+    animation-duration: 15s;
+    opacity: 0.1;
+}
+
+.bubble--6 {
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-delay: 3s;
+    animation-duration: 30s;
+    opacity: 0.4;
+}
+
+.bubble--7 {
+    width: 15px;
+    height: 15px;
+    left: 90%;
+    animation-delay: -7s;
+    animation-duration: 25s;
+    opacity: 0.3;
+}
+
+.bubble--9 {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom: 30px;
+    animation-delay: -5s;
+    animation-duration: 19s;
+    opacity: 0.2;
+}
+
+.bubble--10 {
+    width: 40px;
+    height: 40px;
+    left: 30%;
+    bottom: 20px;
+    animation-delay: -21s;
+    animation-duration: 16s;
+    opacity: 0.3;
+}
+
+.bubble--11 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    bottom: 30px;
+    animation-delay: -13.75s;
+    animation-duration: 20s;
+    opacity: 0.3;
+}
+
+.bubble--11 {
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    bottom: 30px;
+    animation-delay: -10.5s;
+    animation-duration: 19s;
+    opacity: 0.3;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-top: 10px;
+}
+
+.footer-top {
+    border-bottom: 1px solid #1c74d9;
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-family: "Pirata One", sans-serif;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #1c74d9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #1c74d9;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #1c74d9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #1c74d9;
+}
+
+.footer-section.important p {
+    color: red;
+    /* Cor vermelha para o texto da seção de aviso importante */
+}
+
+.footer-section.important h4 {
+    color: red;
+    /* Cor vermelha para o texto da seção de aviso importante */
+}
+
+.social-links a {
+    margin: 0 10px;
+    /* Espaçamento entre os ícones */
+    font-size: 24px;
+    /* Tamanho inicial dos ícones */
+    color: #ffffff;
+    /* Cor dos ícones */
+    transition: font-size 0.3s ease;
+    /* Transição suave ao mudar o tamanho */
+
+}
+
+.social-links a:hover {
+    color: #1c74d9;
+    /* Cor dos ícones ao passar o mouse */
+}
+
+footer {
+    position: relative;
+    background-color: #11212d;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.ocean {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #000000, #11212d);
+    z-index: 0;
+}
+
+
+.footer-top,
+.footer-bottom {
+    position: relative;
+    z-index: 10;
+    /* Mantém o conteúdo do rodapé acima das animações do oceano */
+}
+
+
+/* Ondas no topo do rodapé */
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    /* Altura das ondas */
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    background: #11212d;
+    /* Cor das ondas */
+}
+
+.wave1 {
+    animation: waveAnimation1 8s infinite linear;
+    clip-path: polygon(0 60%, 25% 70%, 50% 60%, 75% 70%, 100% 60%, 100% 100%, 0% 100%);
+}
+
+.wave2 {
+    opacity: 0.6;
+    animation: waveAnimation2 10s infinite linear;
+    clip-path: polygon(0 55%, 25% 65%, 50% 55%, 75% 65%, 100% 55%, 100% 100%, 0% 100%);
+}
+
+.wave3 {
+    opacity: 0.4;
+    animation: waveAnimation3 12s infinite linear;
+    clip-path: polygon(0 50%, 25% 60%, 50% 50%, 75% 60%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes waveAnimation1 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(-5px);
+        /* Leve movimento para cima */
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes waveAnimation2 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(-3px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes waveAnimation3 {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-25%) translateY(-2px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
